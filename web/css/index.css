@@ -1,0 +1,133 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    transition:200ms;
+    font-family: 'Noto Sans';
+}
+body{
+    background-color:rgb(245,245,245);
+}
+nav{
+    max-width:34vw;
+    position:fixed;
+    top:5px;
+    right:5px;
+    z-index:2;
+}
+nav ul{
+    width:100%;
+    padding:10px 20px;
+    list-style: none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+nav ul li{
+    padding:5px;
+}
+li a{
+    color:rgba(0,0,0,0.8);
+    text-decoration:none;
+}
+li a:hover{
+    font-weight:bold;
+    color:white;
+}
+header{
+   position:relative;
+   height:100vh;
+   padding-top:35vh;
+   background:#F9A602;
+}
+h1{
+    position:relative;
+    z-index:2;
+    font-size:3.7em;
+    padding-left:20px;
+    display:inline-block;
+}
+h1:hover{
+    cursor:pointer;
+    color:white;
+}
+.left{
+    display: block;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:1;
+    height:100%;
+}
+button{
+    position:relative;
+    z-index:3;
+    margin:20px 40px;
+    padding:10px 9px;
+    border:1px solid #f9a602;
+    border-radius:4px;
+    background:#E79C07;
+}
+button a{
+    color:rgba(0,0,0,.8);
+    text-decoration:none;
+    font-weight: bold;
+}
+button.hover{
+        background:#f9a602;
+    box-shadow:3px 3px 4px rgba(0,0,0,0.1)
+}
+button:hover a{
+    color:white;
+}
+.post{
+    width:90%;
+    margin:30px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.post-content{
+    background:white;
+    margin:40px auto;
+    margin-bottom:30px;
+    width:90%;
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:6px 6px 6px rgba(0,0,0,0.1);
+}
+.header{
+    width:100%;
+    padding:5px 10px;
+    border-bottom:0.5px solid rgba(0,0,0,0.1)
+}
+.header h3{
+    font-size:1.5em;
+    margin:0;
+}
+.header p{
+    margin:0px
+}
+.body{
+    padding:12px;
+}
+.formulario{
+    display:block;
+    width:30%;
+    margin:30px auto;
+}
+.h-login{
+    height:inherit;
+    padding:5px 10px;
+    background:#F9A602;
+}
+.h-login h1{
+    font-size:1.5em;
+    padding:inherit;
+}
+form button{
+    margin:auto;
+    display:block;
+    width:100%;
+}

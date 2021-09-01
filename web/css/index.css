@@ -121,6 +121,7 @@ button:hover a{
     height:inherit;
     padding:5px 10px;
     background:#F9A602;
+    margin-bottom:40px;
 }
 .h-login h1{
     font-size:1.5em;
@@ -130,4 +131,90 @@ form button{
     margin:auto;
     display:block;
     width:100%;
+}
+.form-login{
+    width:40vw;
+    max-width:400px;
+    padding:10px 20px;
+    margin:30px auto;
+    margin-top:100px;
+    background:white;
+    border-radius:4px;
+    overflow:hidden;
+}
+.form{
+    scroll-behavior:smooth;
+    max-height:200px;
+    overflow:hidden;
+}
+.form-login form{
+    margin-top:20px;
+    height:200%;    
+}
+.control{
+    height:100%;
+    padding:10px;
+    display:flex;
+    margin:20px auto;
+    justify-content:start;
+    flex-direction:column;
+}
+.control label{
+    font-size:1.2em;
+    padding:4px;
+}
+.control input{
+    display:block;
+    width:100%;
+    font-size:1.1em;
+    padding:5px 4px;
+    border:1.5px solid rgba(0,0,0,0.6);
+    border-radius:4px;
+    outline:none;  
+}
+.buttons{
+    width:80%;
+    margin:20px auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.buttons a, .buttons button{
+    width:inherit;
+    display:inline-block;
+    margin:0px 20px;
+    text-decoration:none;
+    text-align:center;
+    color:rgba(0,0,0,0.8);
+    padding:10px 20px;
+    background:#E79C07;
+    border-radius:3px;
+}
+.msj{
+    position:relative;
+    width:50%;
+    background:rgba(250,10,0,0.6);
+    border-radius:4px;
+    margin:20px auto;
+    margin-bottom:0px;
+    padding:10px;
+}
+msj p{
+    text-align:center;
+}
+.close{
+    position:absolute;
+    top:10;
+    right:20px;
+    height:30px;
+    width:30px;
+    background:rgba(250,10,0,9);
+    border-radius:100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+}
+.close-btn span{
+    font-weight:bold;
 }

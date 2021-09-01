@@ -15,18 +15,20 @@ public class Database {
     String driver="com.mysql.jdbc.Driver";
     String user="root";
     String pass="";
-    String db="jdbc:mysql://localhost:3306/estudiantes";
+    String db="jdbc:mysql://localhost:3306/ambientalista2";
     Connection conex=null;
     
-    public Database(){
+    public Connection conect(){
         try{
             Class.forName(driver);
             conex=DriverManager.getConnection(db,user,pass);
             System.out.println("connect success");
+            
         }
         catch(Exception e){
             System.out.println("error en la conexion \n"+e);
         }
+        return conex;
     }
 
     public Connection getDatabase(){

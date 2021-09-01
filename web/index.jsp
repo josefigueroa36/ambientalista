@@ -23,6 +23,6 @@
             <jsp:param name="ciudad" value="<%= p.getCiudad() %>"/>
             <jsp:param name="cedula" value="<%= p.getCiudad() %>"/>
         </jsp:include>
-        <%}%>
+        <% } %>
       
 <jsp:include page='views/includes/footer.jsp' />

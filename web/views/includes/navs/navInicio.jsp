@@ -13,6 +13,6 @@
         <li><a href='/eaci'>Eventos</a></li>
         <li><a href='/eaci'>Consultas</a></li>
         <li><a href='/eaci'>Noticias</a></li>
-        <li><a href='./views/ingresa.jsp'>Ingresa</a></li>
+        <li><a href='./views/login.jsp'>Ingresa</a></li>
     </ul>
 </nav>

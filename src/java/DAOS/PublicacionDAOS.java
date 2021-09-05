@@ -41,20 +41,62 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
-
+    
+    public ArrayList <PublicacionDTO> getOnePublication(Integer id_public){
+        try{
+            sql="select * from publicaciones where id_publicacion= "+id_public;
+            conex=DB.conect();
+            stm=conex.createStatement();
+            rs=stm.executeQuery(sql);
+            ArrayList <PublicacionDTO> one= new ArrayList();
+            while(rs.next()){
+                System.out.print(rs.getString("title"));
+                PublicacionDTO publicacion=new PublicacionDTO();
+                publicacion.setId_publicacion(rs.getInt("id_publicacion"));
+                publicacion.setTitle(rs.getString("title"));
+                publicacion.setBody(rs.getString("body"));
+                publicacion.setImage(rs.getString("image"));
+                publicacion.setFecha(rs.getString("fecha"));
+                publicacion.setUsuario(rs.getInt("usuario"));
+                one.add(publicacion);
+            }
+                
+            return one;
+        }
+        catch(Exception e){
+           System.out.print("get one publication error "+e.toString());
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
+    
     @Override
     public boolean newPublicacion(PublicacionDTO publication) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean editPublicacion(PublicacionDTO publication) {
+    public boolean editPublicacion(PublicacionDTO publication,Integer id_publicacion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean deletePublicacion(PublicacionDTO publication) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public boolean deletePublicacion(Integer id_publicacion) {
+        int valor=0;
+        try{
+            sql="delete from publicaciones where id_publicacion="+id_publicacion;
+            conex=DB.conect();
+            stm=conex.createStatement();
+            valor=stm.executeUpdate(sql);
+            
+            if(valor==0){
+                return false;
+            }
+            return true;
+            
+        }catch(Exception e){
+            System.out.print(e.toString());
+            return false;
+        }
+        }
     
 }

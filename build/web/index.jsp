@@ -13,7 +13,7 @@
     <button><a href='#'>Show More</a></button>
     <img class='left' src='./images/left.svg'/>
 </header>
-    
+     
         <%
             PublicacionDAOS publicacion = new PublicacionDAOS();
             ArrayList <PublicacionDTO> list=new ArrayList();
@@ -21,8 +21,10 @@
             list=publicacion.listPublicacion();
             
             for(PublicacionDTO p: list){
+            
         %>
         <jsp:include page='./views/includes/post.jsp'>
+            <jsp:param name='id_public' value='<%= p.getId_publicacion() %>' />
             <jsp:param name="title" value="<%= p.getTitle() %>" />
             <jsp:param name="body" value="<%= p.getBody() %>"/>
             <jsp:param name="image" value="<%= p.getImage() %>"/>

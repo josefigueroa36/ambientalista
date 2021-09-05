@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public interface Interfaz_Publicacion {
     public ArrayList <PublicacionDTO> listPublicacion();
     public boolean newPublicacion(PublicacionDTO publication);
-    public boolean editPublicacion(PublicacionDTO publication);
-    public boolean deletePublicacion(PublicacionDTO publication);
+    public boolean editPublicacion(PublicacionDTO publication, Integer id_publicacion);
+    public boolean deletePublicacion(Integer id_publicacion);
 
 }

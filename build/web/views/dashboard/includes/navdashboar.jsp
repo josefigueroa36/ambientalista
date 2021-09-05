@@ -16,11 +16,11 @@
     </div>
     <ul class='lista'>
         <li>
-            <a href='./'>Inicio</a>
+            <a href='/eaci/views/dashboard'>Inicio</a>
             <span class='linea'></span>
         </li>
         <li>
-            <a href='./'>Usuarios</a>
+            <a href='./usuarios.jsp'>Usuarios</a>
             <span class='linea'></span>
         </li>
         <li>

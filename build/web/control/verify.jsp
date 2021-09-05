@@ -4,6 +4,7 @@
     Author     : compaq-cq45
 --%>
 
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="controllers.sessiones.Login"%>
 <%@page import="java.util.ArrayList"%>
@@ -32,15 +33,19 @@
     if(rs==null){
         sesion.setAttribute("error","No existen esas credenciales en el sistema");
         response.sendRedirect("../views/login.jsp");
+        return;
     }
     else{
         while(rs.next()){
-            System.out.print(rs.getString("pass"));
+            
                 sesion.setAttribute("name",rs.getString("username"));
-                sesion.setAttribute("id_rol",rs.getInt("id_rol"));
-                sesion.setAttribute("id_persona",rs.getString("id_persona"));
+                //Integer id_rol=rs.getInt("id_rol");
+                sesion.setAttribute("rol",rs.getInt("id_rol"));
+                sesion.setAttribute("persona",rs.getInt("id_persona"));
+                System.out.print("la seionn es"+rs.getInt("id_persona"));
                 response.sendRedirect("../views/dashboard/index.jsp");
             }
+        return;
         }
     }
 

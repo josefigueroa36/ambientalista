@@ -89,6 +89,7 @@ button:hover a{
     flex-direction:column;
 }
 .post-content{
+    position:relative;
     background:white;
     margin:40px auto;
     margin-bottom:30px;
@@ -102,15 +103,74 @@ button:hover a{
     padding:5px 10px;
     border-bottom:0.5px solid rgba(0,0,0,0.1)
 }
+.header h2{
+    font-size:1.3em;
+}
 .header h3{
     font-size:1.5em;
-    margin:0;
+    margin:10px 0;
 }
 .header p{
-    margin:0px
+    margin:0px;
 }
 .body{
-    padding:12px;
+    width:90%;
+    margin:auto;
+}
+.img-content{
+    width:100%;
+}
+.img-content img{
+  display:block;
+  object-fit:cover;
+  width:100%;
+  max-height:50vh;
+  margin:20px auto;
+  border-radius:4px;
+}
+.reaction-content{
+    width:100%;
+    padding:10px 40px;
+    display:flex;
+    justify-content:space-between;
+}
+.left-reaction{
+    display:flex;
+}
+.reaction-content a{
+    text-decoration:none;
+     margin:0px 20px;
+}
+.reaction-content i{
+    display:block;
+    font-size:2em;
+    color:#01F1B2;
+    border-radius:100px;
+    cursor:pointer;
+}
+.left-reaction .like{
+    color:rgb(240,10,70);
+}
+.left-reaction .coments{
+    color:#f9a602;
+}
+.left-reaction .share{
+    color:rgb(0,70,255);
+}
+.reaction-content .report{
+    color:rgb(255,10,10);
+}
+.reaction-content i:hover{
+    font-size:2.2em;
+}
+.fecha{
+    position:absolute;
+    right:10px;
+    padding-top:5px;
+    padding-right:5px;
+}
+.fecha p{
+    text-align:right;
 }
 .formulario{
     display:block;

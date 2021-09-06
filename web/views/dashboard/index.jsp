@@ -112,6 +112,7 @@ else{
         
     %>
     <jsp:include page='includes/card.jsp'>
+        <jsp:param name="archivado" value="<%= p.getArchivado() %>" />
         <jsp:param name='title' value="<%= p.getTitle() %>" />
         <jsp:param name='body' value="<%= p.getBody()%>" />
         <jsp:param name='image' value="<%= p.getImage()%>" />

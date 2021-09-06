@@ -24,6 +24,7 @@
             
         %>
         <jsp:include page='./views/includes/post.jsp'>
+            <jsp:param name='archivado' value="<%= p.getArchivado() %>" />
             <jsp:param name='id_public' value='<%= p.getId_publicacion() %>' />
             <jsp:param name="title" value="<%= p.getTitle() %>" />
             <jsp:param name="body" value="<%= p.getBody() %>"/>

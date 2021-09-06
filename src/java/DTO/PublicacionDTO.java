@@ -7,6 +7,7 @@ public class PublicacionDTO {
     String body;
     String image;
     String fecha;
+    boolean archivado;
     int usuario;
     
     
@@ -14,11 +15,18 @@ public class PublicacionDTO {
         
     }
     
+    public boolean getArchivado(){
+        return archivado;
+    }
+    
+    public void setArchivado(boolean archivado){
+        this.archivado=archivado;
+    }
     
     public int getId_publicacion() {
         return id_publicacion;
     }
-
+    
     public void setId_publicacion(int id_publicacion) {
         this.id_publicacion = id_publicacion;
     }

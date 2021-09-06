@@ -23,11 +23,11 @@
     if(delete){
         sesion.setAttribute("delete","ok");
         sesion.setAttribute("msj","La publicacion fue eliminada exitosamente");
-        response.sendRedirect("../dashboard/index.jsp");
+        response.sendRedirect("../../dashboard/index.jsp");
         
     }
     else{
         sesion.setAttribute("msj","La publicacion no fue eliminada, ocurrio un error");
-        response.sendRedirect("../dashboard/index.jsp");
+        response.sendRedirect("../../dashboard/index.jsp");
     }
 %>

@@ -27,6 +27,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
             ArrayList <PublicacionDTO> lista= new ArrayList();
             while(rs.next()){
                 PublicacionDTO publicacion=new PublicacionDTO();
+                publicacion.setArchivado(rs.getBoolean("archivado"));
                 publicacion.setId_publicacion(rs.getInt("id_publicacion"));
                 publicacion.setTitle(rs.getString("title"));
                 publicacion.setBody(rs.getString("body"));
@@ -53,6 +54,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
                 System.out.print(rs.getString("title"));
                 PublicacionDTO publicacion=new PublicacionDTO();
                 publicacion.setId_publicacion(rs.getInt("id_publicacion"));
+                publicacion.setArchivado(rs.getBoolean("archivado"));
                 publicacion.setTitle(rs.getString("title"));
                 publicacion.setBody(rs.getString("body"));
                 publicacion.setImage(rs.getString("image"));

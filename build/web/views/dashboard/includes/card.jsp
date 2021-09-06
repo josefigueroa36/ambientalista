@@ -26,7 +26,7 @@
     
 %>
 
-<div class='card-content'>
+<div class='card-content <%= request.getParameter("archivado") %>'>
     <div class='card-subcontent'>
     <div class='time'>
         <p><%= request.getParameter("fecha") %></p>
@@ -38,7 +38,7 @@
     </div>
     </div>
     <div class='option'>
-        <a href="../options/archive.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-folder-minus'></i></a>
+        <a class='i' href="../options/archive.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-folder-minus'></i></a>
         <a href="../options/update.jsp?<%= request.getParameter("id_public") %>"><i class='fas fa-edit'></i></a>
     </div>
     

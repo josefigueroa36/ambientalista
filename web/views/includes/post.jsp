@@ -8,6 +8,13 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
+<%
+    System.out.print(request.getParameter("archivado"));
+    if(Boolean.parseBoolean(request.getParameter("archivado"))){
+        return;
+    }
+    else{
+%>
 <div class='post-content'>
     <div class='fecha'>
         <p><%= request.getParameter("fecha") %></p>
@@ -26,7 +33,7 @@
             }
         %>
         <h2><%= name %></h2>
-        <h3><%= request.getParameter("title") %></h3>
+        <h3><a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><%= request.getParameter("title") %></a></h3>
         <p><%= request.getParameter("body") %></p>
     </div>
     <div class='body'>
@@ -46,3 +53,6 @@
         <a><i class='fas fa-exclamation-circle report'></i></a>
     </div>
 </div>
+<%
+ }
+%>    

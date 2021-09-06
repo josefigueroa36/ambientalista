@@ -138,6 +138,18 @@ body{
     display:flex;
     justify-content:space-between;
 }
+.true{
+    background:rgb(10,10,10);
+}
+.true *{
+    color:rgba(255,255,255,0.8)
+}
+.true a .i{
+    color:rgba(20,255,20,0.9);
+}
+.true a i:not(.i){
+    color:white;
+}
 .card-subcontent{
   width:90%;
 }
@@ -423,4 +435,35 @@ body{
     font-size:1.5em;
     color:rgba(20,255,20,0.8);
     text-align:center;
+}
+
+.h-login{
+    height:inherit;
+    display:flex;
+    justify-content:space-between;
+    padding:5px 10px;
+    background:#F9A602;
+    margin-bottom:40px;
+}
+.h-login h1{
+    font-size:1.5em;
+    padding:inherit;
+}
+.h-login nav{
+    width:30%;
+}
+.h-login nav ul{
+    padding:0;
+    display:flex;
+    justify-content:space-between;
+    padding:5px 10px;
+    list-style:none;
+}
+.h-login a{
+    font-weight:bold;
+    color:rgba(0,0,0,0.8);
+    text-decoration:none;
+}
+.h-login a:hover{
+    color:white;
 }

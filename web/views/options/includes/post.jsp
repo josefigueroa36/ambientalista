@@ -14,7 +14,7 @@
 <%
     
     
-    Integer id_public=Integer.parseInt(request.getParameter("id_public"));
+    Integer id_public=Integer.parseInt(request.getParameter("id_public")==null ? "0" :request.getParameter("id_public"));
     PersonaDAOS persona=new PersonaDAOS();
     ArrayList <PersonaDTO> personaone=new ArrayList();
     
@@ -30,9 +30,10 @@
     Integer id_pub=0;
     String fecha="";
     String name="";
-    
+    boolean archivado=false;
     
     for(PublicacionDTO p: onePublication){
+        archivado=p.getArchivado();
         title=p.getTitle();
         id_pub=p.getId_publicacion() == 0 ? 0 : p.getId_publicacion();
         body=p.getBody();
@@ -40,13 +41,13 @@
         id_usuario=p.getId_publicacion();
         fecha=p.getFecha();
     }
+    System.out.print("el boleanod "+archivado);
     if(id_pub!=0){
-        out.print(id_pub);
-    
-    personaone=persona.getPersonCredencial(id_public);
-    for(PersonaDTO p:personaone){
-        name=p.getName();
-    }
+        if(!archivado){
+            personaone=persona.getPersonCredencial(id_public);
+            for(PersonaDTO p:personaone){
+                name=p.getName();
+            }
 %>
 
 <div class='post-content'>
@@ -92,12 +93,13 @@
         <a><i class='fas fa-exclamation-circle report'></i></a>
     </div>
 </div>
-<%
+<%  
     }
 else{
 %>
 <jsp:include page="../../includes/404.jsp"/>
 
 <%
-}
+    }
+    }
 %>

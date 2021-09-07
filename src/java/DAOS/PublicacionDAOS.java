@@ -80,7 +80,25 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
     public boolean editPublicacion(PublicacionDTO publication,Integer id_publicacion) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    public boolean archivePublication(Integer id_public,boolean archive){
+        int valor=0;
+       try{
+           sql="update publicaciones set archivado="+archive+" where id_publicacion="+id_public;
+           conex=DB.conect();
+           stm=conex.createStatement();
+           valor=stm.executeUpdate(sql);
+           if(valor==0){
+               return false;
+           }
+           return true;
+       } 
+       catch(Exception e){
+          System.out.print(e.toString()); 
+       }
+       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates. 
+    }
+    
     @Override
     public boolean deletePublicacion(Integer id_publicacion) {
         int valor=0;

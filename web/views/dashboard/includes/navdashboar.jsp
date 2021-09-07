@@ -20,7 +20,7 @@
             <span class='linea'></span>
         </li>
         <li>
-            <a href='./usuarios.jsp'>Usuarios</a>
+            <a href='/eaci/views/dashboard/usuarios.jsp'>Usuarios</a>
             <span class='linea'></span>
         </li>
         <li>

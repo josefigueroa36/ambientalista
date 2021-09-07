@@ -30,6 +30,13 @@
     <div class='card-subcontent'>
     <div class='time'>
         <p><%= request.getParameter("fecha") %></p>
+        <%
+            if(Boolean.parseBoolean(request.getParameter("archivado"))!=false){
+                %>
+                <p><strong>Archivado</strong></p>
+                <%
+            }
+        %>
     </div>
     <div class='card-text'>
         <h3><%= request.getParameter("title") %></h3>

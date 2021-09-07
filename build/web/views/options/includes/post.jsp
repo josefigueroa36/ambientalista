@@ -41,9 +41,9 @@
         id_usuario=p.getId_publicacion();
         fecha=p.getFecha();
     }
-    System.out.print("el boleanod "+archivado);
+    System.out.print("el boleanod "+Boolean.parseBoolean(request.getParameter("admin")));
     if(id_pub!=0){
-        if(!archivado){
+        if(!archivado || Boolean.parseBoolean(request.getParameter("admin"))==true){
             personaone=persona.getPersonCredencial(id_public);
             for(PersonaDTO p:personaone){
                 name=p.getName();
@@ -63,8 +63,18 @@
                     <p>Eliminar</p></a>
             </div>
             <div>
-                <a href='../'><i class='fas fa-folder-minus'></i><p>Archivar</p></a>
-             
+                <%
+                if(archivado){
+                %>
+                <a href='/eaci/views/options/operators/archivePost.jsp?archi=false&post=<%= id_public%>'><i class='fas fa-folder-minus' style="color:green"></i><p>Desarchivar</p></a>
+                <%
+                    }
+                    else{
+                %>
+                <a href='/eaci/views/options/operators/archivePost.jsp?archi=true&post=<%= id_public %>'><i class='fas fa-folder-minus'></i><p>Archivar</p></a>
+                <%
+                }
+                %>
             </div>
         </div>
         

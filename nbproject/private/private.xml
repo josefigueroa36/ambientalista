@@ -3,17 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/operators/delete.jsp</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/index.jsp</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/control/verify.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/src/java/DAOS/RolDAOS.java</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/includes/user.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/usuario.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/includes/card.jsp</file>
             <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/usuarios.jsp</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/css/index.css</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/includes/alert.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/includes/navdashboar.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/operators/archivePost.jsp</file>
             <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/includes/post.jsp</file>
             <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/archive.jsp</file>
+            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/options/public.jsp</file>
             <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/src/java/DAOS/PublicacionDAOS.java</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/dashboard/js/menu.js</file>
-            <file>file:/C:/Users/compaq-cq45/Documents/NetBeansProjects/ambientalista/web/views/login.jsp</file>
         </group>
     </open-files>
 </project-private>

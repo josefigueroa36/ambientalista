@@ -66,6 +66,7 @@
         email=p.getEmail();
         id_person=p.getId_persona();
     %>
+    
         <jsp:include page='includes/user.jsp'>
             <jsp:param name='nombre' value="<%= name %>" />
             <jsp:param name='cedula' value="<%= cedula %>" />
@@ -74,7 +75,7 @@
             <jsp:param name='secondLastname' value="<%= secondLastname %>" />
             <jsp:param name='telefono' value="<%= telefono %>" />
             <jsp:param name='email' value="<%= email %>" />
-            <jsp:param name='id_peron' value="<%= id_person %>" />
+            <jsp:param name='id_person' value="<%= id_person %>" />
         </jsp:include>
      <%
      }

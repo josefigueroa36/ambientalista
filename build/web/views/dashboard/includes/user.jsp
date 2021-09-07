@@ -20,4 +20,5 @@
         <h4>Telefono: <%= request.getParameter("telefono") %></h4>
         <h4>Rol: indefinido</h4>
     </div>
+        <a style="display:block; text-align:center;" href='/eaci/views/options/usuario.jsp?user=<%= request.getParameter("id_person") %>'><i class='fas fa-eye'></i></a>
 </li>

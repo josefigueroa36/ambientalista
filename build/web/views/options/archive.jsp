@@ -35,11 +35,20 @@
     <jsp:include page='includes/post.jsp'>
         <jsp:param name='id' value='<%= request.getParameter("id_public") %>'/>
         <jsp:param name='archive' value="archive"/>
-
+        <jsp:param name='admin' value='true'/>
     </jsp:include>
     </div>
 </div>
 
-
+<script type="text/javascript">
+    <%
+        if(sesion.getAttribute("msj")!=null){
+            %>
+                alert('<%= sesion.getAttribute("msj") %>');
+            <%
+                sesion.removeAttribute("msj");
+        }
+    %>
+</script>
 <script src='../dashboard/js/menu.js' type='text/javascript' ></script>
 <jsp:include page='../includes/footer.jsp' />

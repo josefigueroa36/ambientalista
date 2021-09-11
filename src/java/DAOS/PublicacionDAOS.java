@@ -73,6 +73,25 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
     
     @Override
     public boolean newPublicacion(PublicacionDTO publication) {
+        int valor=0;
+        try{
+            sql="insert into publicaciones(id_publicacion,title,body,image,fecha,usuario,archavado) "
+                    + "values(null,'"+publication.getTitle() +"','"+publication.getBody()+"','"+publication.getImage()+"',"
+                    + "null,"+publication.getUsuario()+",0)";
+           conex=DB.conect();
+           stm=conex.createStatement();
+           valor=stm.executeUpdate(sql);
+           if(valor!=0){
+               return true;
+           }
+           else{
+               return false;
+           }
+        }
+        catch(Exception e){
+            System.out.print("error en insaertar"+e.toString());
+        }
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

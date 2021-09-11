@@ -467,3 +467,48 @@ body{
 .h-login a:hover{
     color:white;
 }
+.content-add-post{
+    background:white;
+    width:50%;
+    margin:10px auto;
+    padding:10px;
+}
+.content-add-post h1{
+    font-size:1.9em;
+    text-align:center;
+    margin:10px 0;
+    color:#f9a602;
+}
+.content-add-post .control{
+    width:100%;
+    display:flex;
+    margin-bottom:20px;
+    justify-content:center;
+    flex-direction:column;
+}
+.control label, .control input{
+    width:100%
+}
+.control label{
+    font-size:1.3em;
+    text-align:center;
+}
+.control input,.control textarea{
+    border-radius:3px;
+    width:80%;
+    margin:10px auto;
+    outline-color:#01F1B2;
+    padding:5px;
+    font-size:1.2em;
+    border:0.5px solid rgba(0,0,0,0.8);
+}
+textarea{
+    min-width:80%;
+    max-width:80%;
+    min-height:150px;
+    max-height:150px;
+}
+.imagen{
+    
+}
+

@@ -88,6 +88,7 @@ else{
        listRol=rol.getOne((Integer)sesion.getAttribute("rol"));
        for(RolDTO r:listRol){
            elRol=r.getRol();
+           sesion.setAttribute("id_rol",r.getId_rol());
        }
        sesion.setAttribute("elRol",elRol);
   %>

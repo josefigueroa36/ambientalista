@@ -5,6 +5,7 @@
 --%>
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
@@ -38,7 +39,16 @@
     </div>
     <div class='body'>
         <div class='img-content'>
-            <img src="<%= request.getParameter("image") %>" > 
+            
+          <%
+          String value = request.getParameter("image");
+          if(!value.equals("null")){
+          %><img src="<%= request.getParameter("image") %>" >  <%
+          }else{
+          %><img src="https://i.ytimg.com/vi/AUTh--Afz0k/mqdefault.jpg" >  <%
+          }
+          %>
+          
         </div>
     </div>
     <div class='reaction-content'>

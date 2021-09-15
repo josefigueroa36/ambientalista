@@ -39,20 +39,20 @@
                 if(!fi.isFormField()){
                     String fieldName=fi.getFieldName();
                     String fileName=fi.getName();
+
                     boolean isInMemory=fi.isInMemory();
                     long sizeInByte=fi.getSize();
                     file =new File("C:/xampp/htdocs/img/" + fileName);
                     fi.write(file);
-                      
+
                     image= "http://localhost/img/" + fileName; 
-                    
+                 
                 }
                 else{
                     lista.add(fi.getString());
-                  
                    }
             }
-            System.out.println(image);
+            
             publi.setImage(image);
             publi.setTitle(lista.get(0));
             publi.setBody(lista.get(1));
@@ -65,7 +65,7 @@
         }
         catch(Exception e){
             System.out.println(e);
-           
+            response.sendRedirect("/eaci/views/dashboard/addpublic.jsp?error=true");
         }
     }
     else{

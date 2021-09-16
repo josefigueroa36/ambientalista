@@ -55,10 +55,10 @@ public class prueba extends HttpServlet {
                for(int i=0;i<items.size();i++){
                    FileItem fileItem=(FileItem)items.get(i);
                    if(!fileItem.isFormField()){
-                       File f=new File("C:\\images\\uploads\\"+fileItem.getName());
+                       File f=new File("C:\\Users\\57322\\Desktop\\ambientalista\\web\\images\\"+fileItem.getName());
                        fileItem.write(f);
                        //publi.setImage(fileItem.getName());
-                       
+                       //C:\\images\\uploads\\
                    }
                    else{
                        lista.add(fileItem.getString());

@@ -39,6 +39,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
             return lista;
         }
         catch(Exception e){
+        System.out.print("list publication error "+e.toString());
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
@@ -75,7 +76,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
     public boolean newPublicacion(PublicacionDTO publication) {
         int valor=0;
         try{
-            sql="insert into publicaciones(id_publicacion,title,body,image,fecha,usuario,archavado) "
+            sql="insert into publicaciones(id_publicacion,title,body,image,fecha,usuario,archivado) "
                     + "values(null,'"+publication.getTitle() +"','"+publication.getBody()+"','"+publication.getImage()+"',"
                     + "null,"+publication.getUsuario()+",0)";
            conex=DB.conect();
@@ -89,7 +90,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion{
            }
         }
         catch(Exception e){
-            System.out.print("error en insaertar"+e.toString());
+            System.out.print("errors en insertar"+e.toString());
         }
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

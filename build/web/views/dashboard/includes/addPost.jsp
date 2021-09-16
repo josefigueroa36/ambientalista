@@ -6,10 +6,25 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true" %>
-<%
-    HttpSession sesion=request.getSession();
-%>
+<style>
+    .error{
+        color:#484848;
+        background-color: #FCF0F0;
+        padding: 2px;
+        text-align: center;
+        font-family: 'arial';
+        border: 2px solid #FEB1B1;
+        border-radius: 16px;
+    }
+</style>
+
 <div class="content-add-post">
+    <%
+    HttpSession sesion=request.getSession();
+    if(request.getParameter("error") != null ){
+    %><p class="error">error por favor almacene una imagen de preferencia</p><%
+    }
+    %>
     <h1>Añadir una pubicacion</h1>
     <form action="/eaci/control/addpublic.jsp" method="post" enctype="multipart/form-data">
         <div class="control">

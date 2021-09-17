@@ -60,10 +60,17 @@
             <a href='./'>Mensajes</a>
             <span class='linea'></span>
         </li>
+        <%
+            if(elRol.equals("administrador")|| elRol.equals("sub administrador")){
+                 
+                %>
         <li>
             <a href='./'>Archivados</a>
             <span class='linea'></span>
         </li>
+        <%
+            }
+            %>
         <li>
             <a href='./'>Configraciones</a>
             <span class='linea'></span>

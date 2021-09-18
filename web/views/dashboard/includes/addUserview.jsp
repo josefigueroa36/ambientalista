@@ -15,6 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>añadiendo usuario</title>
     </head>
+
     <form action="../../../control/addUser.jsp" method="post">
         <div class="mb-3">
             <label for="cedula" class="form-label">Cedula</label>

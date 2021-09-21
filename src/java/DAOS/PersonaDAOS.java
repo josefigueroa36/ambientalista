@@ -102,13 +102,14 @@ public class PersonaDAOS implements Interfaz_Persona{
 
     @Override
     public boolean newPresona(PersonaDTO person) {
-        int valor=0;
+       int valor=0;
         try{
             
-            sql="insert into personas(id_persona, cedula, name, middlename, lastname, seccondlastname, telefono, email)"
-                    + "VALUES(id_persona, '"+person.getCedula()+"','"+person.getName()+"','"+person.getMiddlename()+"',"
+            sql="insert into personas(cedula, name, middlename, lastname, seccondlastname, telefono, email)"
+                    + "VALUES('"+person.getCedula()+"','"+person.getName()+"','"+person.getMiddlename()+"',"
                     + "'"+person.getLastname()+"','"+person.getSecondlasname()+"','"+person.getTelefono()+"',"
                     + "'"+person.getEmail()+"')";
+            System.out.println(sql);
             conex = DB.conect();
             stm = conex.createStatement();
             valor = stm.executeUpdate(sql);
@@ -121,8 +122,32 @@ public class PersonaDAOS implements Interfaz_Persona{
        
         catch(Exception e){
             System.out.println("error al insertar los datos: "+ e.getMessage());
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public int ultimaPersona (){
+        int persona  = 0;
+        try{
+            sql = "select max(id_persona) AS id_persona FROM personas";
+            System.out.println(sql);
+            conex = DB.conect();
+            stm = conex.createStatement();
+            rs = stm.executeQuery(sql);
+            
+            while(rs.next()){
+                persona = rs.getInt("id_persona");
+                System.out.println(persona);
+            }
+             
+          conex.close();
+        }
+         catch(Exception e){
+            System.out.println("error al insertar los datos: "+ e.getMessage());
+            
+        }
+        
+       return persona;
     }
 
     @Override

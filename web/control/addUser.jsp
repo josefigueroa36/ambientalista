@@ -5,6 +5,8 @@
 --%>
 
 
+<%@page import="DAOS.CredencialesDAOS"%>
+<%@page import="DTO.CredencialesDTO"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
 
@@ -45,22 +47,27 @@
         pdto.setEmail(correo);
         boolean agregando = persona.newPresona(pdto);
         if(agregando){ 
-            %>
-            <script>
-                alert("Usuario agregado :D");
-            </script>
-            <%
-                response.sendRedirect("../views/dashboard/usuarios.jsp");
-             
+            
+              int id_person = persona.ultimaPersona();
+                       
+            CredencialesDTO credendto = new CredencialesDTO();
+            CredencialesDAOS credendao = new CredencialesDAOS();
+            credendto.setUsername(nombre);
+            credendto.setPass(cedula);
+            credendto.setId_persona(id_person);
+            System.out.println(id_person);
+            boolean agregando2 = credendao.oneCredencial(credendto);
+            if(agregando2){
+               
+               response.sendRedirect("../views/dashboard/usuarios.jsp");
+            }
+            else{
+                 out.print("<h1>nooo :C </h1>");
+            }
                    
         }
         else{
-            %>
-            <script>
-                alert("Error al agregar el usuario");
-            </script>
-            
-         <% 
+           
             response.sendRedirect("../views/dashboard/includes/addUserview.jsp");
         }
             

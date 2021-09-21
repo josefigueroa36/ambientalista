@@ -4,7 +4,7 @@ public class CredencialesDTO {
     int id_credencial;
     int id_persona;
     int id__rol;
-    String nickname;
+    String username;
     String pass;
     
     public CredencialesDTO(){
@@ -15,7 +15,7 @@ public class CredencialesDTO {
         this.id_credencial = id_credencial;
         this.id_persona = id_persona;
         this.id__rol = id__rol;
-        this.nickname = nickname;
+        this.username = username;
         this.pass = pass;
     }
 
@@ -43,12 +43,12 @@ public class CredencialesDTO {
         this.id__rol = id__rol;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String nickname) {
+        this.username = nickname;
     }
 
     public String getPass() {

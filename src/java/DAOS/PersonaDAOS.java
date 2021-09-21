@@ -102,7 +102,7 @@ public class PersonaDAOS implements Interfaz_Persona{
 
     @Override
     public boolean newPresona(PersonaDTO person) {
-        int valor=0;
+       int valor=0;
         try{
             
             sql="insert into personas(cedula, name, middlename, lastname, seccondlastname, telefono, email)"
@@ -124,7 +124,6 @@ public class PersonaDAOS implements Interfaz_Persona{
             System.out.println("error al insertar los datos: "+ e.getMessage());
         }
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-
     }
     
     public int ultimaPersona (){

@@ -5,7 +5,6 @@
 --%>
 
 
-<%@page import="java.sql.ResultSet"%>
 <%@page import="DAOS.CredencialesDAOS"%>
 <%@page import="DTO.CredencialesDTO"%>
 <%@page import="DTO.PersonaDTO"%>
@@ -46,11 +45,10 @@
         pdto.setSecondlasname(apellido2);
         pdto.setTelefono(telefono);
         pdto.setEmail(correo);
-        
         boolean agregando = persona.newPresona(pdto);
-        if(agregando){  
-      
-            int id_person = persona.ultimaPersona();
+        if(agregando){ 
+            
+              int id_person = persona.ultimaPersona();
                        
             CredencialesDTO credendto = new CredencialesDTO();
             CredencialesDAOS credendao = new CredencialesDAOS();
@@ -66,10 +64,10 @@
             else{
                  out.print("<h1>nooo :C </h1>");
             }
-                
+                   
         }
         else{
-          
+           
             response.sendRedirect("../views/dashboard/includes/addUserview.jsp");
         }
             

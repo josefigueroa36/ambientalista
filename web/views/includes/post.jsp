@@ -54,8 +54,8 @@
     <div class='reaction-content'>
         <div class='left-reaction'>
             
-        <a><i class='fas fa-heart like'></i></a>
-        <a><i class='fas fa-comment-dots coments'></i></a>
+        <a ><i class='fas fa-heart like'></i></a>
+        <a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-comment-dots coments'></i></a>
         <a><i class='fas fa-share share'></i></a>
 
         </div>

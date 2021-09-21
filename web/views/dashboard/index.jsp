@@ -16,7 +16,7 @@
 
 <%
     HttpSession sesion=request.getSession();
-    
+    System.out.println(sesion.getAttribute("persona"));
     if(sesion.getAttribute("name")==null || sesion.getAttribute("rol")==null || sesion.getAttribute("persona")==null){
         System.out.print(""+sesion.getAttribute("name") + sesion.getAttribute("rol") + sesion.getAttribute("persona"));
         response.sendRedirect("../login.jsp");

@@ -42,7 +42,7 @@
                 //Integer id_rol=rs.getInt("id_rol");
                 sesion.setAttribute("rol",rs.getInt("id_rol"));
                 sesion.setAttribute("persona",rs.getInt("id_persona"));
-                System.out.print("la seionn es"+rs.getInt("id_persona"));
+                System.out.print("la sesionn es"+rs.getInt("id_persona"));
                 response.sendRedirect("../views/dashboard/index.jsp");
             }
         return;

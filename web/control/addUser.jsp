@@ -52,7 +52,7 @@
                        
             CredencialesDTO credendto = new CredencialesDTO();
             CredencialesDAOS credendao = new CredencialesDAOS();
-            credendto.setUsername(nombre);
+            credendto.setUsername(cedula);
             credendto.setPass(cedula);
             credendto.setId_persona(id_person);
             System.out.println(id_person);

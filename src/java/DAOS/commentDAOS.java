@@ -55,6 +55,23 @@ public class commentDAOS implements Interfazcomentario{
 
     @Override
     public boolean newcomment(comentarioDTO person) {
+        int valor=0;
+        try{
+            sql="INSERT INTO comentarios(user, idpost, comentario) values ('"+person.getUser()+"', '"+person.getIdpost()+"','"+person.getComentario()+"')";
+           conex=DB.conect();
+           stm=conex.createStatement();
+           valor=stm.executeUpdate(sql);
+           if(valor!=0){
+               return true;
+           }
+           else{
+               return false;
+           }
+        }
+        catch(Exception e){
+            System.out.print("errors en insertar"+e.toString());
+        }
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

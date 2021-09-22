@@ -68,7 +68,7 @@
     </jsp:include>
      
      <div class="create">
-    <button type="submit"><a href="../../views/dashboard/includes/addUserview.jsp">Añadir Comentario</a></button>
+    <button type="submit"><a href="operators/newComments.jsp?id_publics=<%= request.getParameter("id_public") %>">Añadir Comentario</a></button>
     </div>
      
      <div class="comments">

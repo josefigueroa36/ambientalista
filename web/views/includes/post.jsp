@@ -33,6 +33,7 @@
                name=p.getName();
             }
         %>
+           
         <h2><%= name %></h2>
         <h3><a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><%= request.getParameter("title") %></a></h3>
         <p><%= request.getParameter("body") %></p>
@@ -58,9 +59,8 @@
         <a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-comment-dots coments'></i></a>
         <a><i class='fas fa-share share'></i></a>
 
-        </div>
-        
-        <a><i class='fas fa-exclamation-circle report'></i></a>
+        </div>    
+        <a href="http://localhost:8080/eaci/control/addreport.jsp?id_pub=<%= request.getParameter("id_public") %>"><i class='fas fa-exclamation-circle report'></i></a>
     </div>
 </div>
 <%

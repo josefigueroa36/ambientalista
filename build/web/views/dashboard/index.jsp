@@ -13,6 +13,20 @@
 <%@page import="DAOS.PublicacionDAOS"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
+<style>
+    .report{
+        text-decoration: none;
+        color: #0A58CA;
+        margin: 40px;
+        background-color: #01F1B2;
+        padding: 10px;
+        font-weight: bold;
+       
+    } 
+        .report:hover{
+        color: white;
+    } 
+</style>
 
 <%
     HttpSession sesion=request.getSession();
@@ -73,6 +87,7 @@ else{
     <jsp:param name='msj' value='<%= sesion.getAttribute("msj") %>'/>
     <jsp:param name='red' value='red'/>
 </jsp:include>
+
 <%
     sesion.removeAttribute("msj");
     }
@@ -103,6 +118,8 @@ else{
 </div>
 <jsp:include page='includes/navdashboar.jsp'/>
 
+<a href="reportesregister.jsp" class="report">Publicaciones reportadas</a>
+<a href="addpublic.jsp" class="report">Agregar Publicaciones </a>
 <div class='card-list' id='cardList'>
     <%
         
@@ -110,7 +127,7 @@ else{
         for(PublicacionDTO p:list){
         listRol=rol.getOne(p.getUsuario());
         
-        
+
     %>
     <jsp:include page='includes/card.jsp'>
         <jsp:param name="archivado" value="<%= p.getArchivado() %>" />
@@ -125,6 +142,7 @@ else{
     </jsp:include>
     
     <%}%>
+    
 </div>
 
 

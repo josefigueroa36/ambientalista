@@ -4,12 +4,14 @@
     Author     : compaq-cq45
 --%>
 
+<%@page import="java.util.Objects"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
 <%@page import="DTO.comentarioDTO"%>
 <%@page import="DAOS.commentDAOS"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session='true' %>
 <style>
     .comments{
         width: 100%;
@@ -48,6 +50,13 @@
        color: white;
        font-weight: bold;
     }
+    .report{
+        text-align: center;
+        background-color: #FF6C5C;
+        color: white;
+        font-weight: bold;
+        padding: 3px;
+    }
 </style>
 
 <jsp:include page='../includes/header.jsp'>
@@ -61,15 +70,40 @@
 <jsp:include page='../includes/navs/navInicio.jsp' />
 </header>
 
+    <%
+    
+    if(request.getParameter("sucess") != null ){
+    %><p class="report">la publicacion ha sido reportada exitosamente</p><%
+    }
+    %>
+
  <div class='post'>
     <jsp:include page='includes/post.jsp'>
         <jsp:param name='id' value='<%= request.getParameter("id_public") %>'/>
 
     </jsp:include>
      
-     <div class="create">
-    <button type="submit"><a href="operators/newComments.jsp?id_publics=<%= request.getParameter("id_public") %>">Añadir Comentario</a></button>
-    </div>
+               
+
+            <%
+            
+            HttpSession sesion=request.getSession();
+
+            if(sesion.getAttribute("name") != null ){        
+             
+            %>
+                
+            <div class="create">
+            <button type="submit"><a href="operators/newComments.jsp?id_publics=<%= request.getParameter("id_public") %>">Añadir Comentario</a></button>
+            </div>
+                
+                <%}else{
+                
+}
+
+%>
+     
+
      
      <div class="comments">
                  <%

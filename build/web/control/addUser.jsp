@@ -48,7 +48,7 @@
         boolean agregando = persona.newPresona(pdto);
         if(agregando){ 
             
-              int id_person = persona.ultimaPersona();
+            int id_person = persona.ultimaPersona();
                        
             CredencialesDTO credendto = new CredencialesDTO();
             CredencialesDAOS credendao = new CredencialesDAOS();

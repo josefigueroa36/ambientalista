@@ -5,10 +5,15 @@
 --%>
 
 
+<%@page import="DTO.LikeDTO"%>
+<%@page import="DAOS.LikeDAOS"%>
+<%@page import="DTO.PublicacionDTO"%>
+<%@page import="DAOS.PublicacionDAOS"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
+
 <%
     System.out.print(request.getParameter("archivado"));
     if(Boolean.parseBoolean(request.getParameter("archivado"))){
@@ -54,8 +59,8 @@
     </div>
     <div class='reaction-content'>
         <div class='left-reaction'>
-            
-        <a ><i class='fas fa-heart like'></i></a>
+          
+        <a href="http://localhost:8080/eaci/control/addLikes.jsp?id_public=<%= request.getParameter("id_public") %>" ><i class='fas fa-heart like'></i></a>
         <a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-comment-dots coments'></i></a>
         <a><i class='fas fa-share share'></i></a>
 

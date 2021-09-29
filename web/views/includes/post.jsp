@@ -5,6 +5,8 @@
 --%>
 
 
+<%@page import="DAOS.reportDAOS"%>
+<%@page import="DTO.reportDTO"%>
 <%@page import="DTO.LikeDTO"%>
 <%@page import="DAOS.LikeDAOS"%>
 <%@page import="DTO.PublicacionDTO"%>
@@ -13,6 +15,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="DTO.PersonaDTO"%>
 <%@page import="DAOS.PersonaDAOS"%>
+<%@ page session="true" %>
 
 <%
     System.out.print(request.getParameter("archivado"));
@@ -59,13 +62,71 @@
     </div>
     <div class='reaction-content'>
         <div class='left-reaction'>
-          
-        <a href="http://localhost:8080/eaci/control/addLikes.jsp?id_public=<%= request.getParameter("id_public") %>" ><i class='fas fa-heart like'></i></a>
+            
+          <%
+              
+        HttpSession sesion=request.getSession();
+        if(sesion.getAttribute("name")==null || sesion.getAttribute("rol")==null || sesion.getAttribute("persona")==null){
+         %><a href="#" ><i class="far fa-heart"></i></a><%      
+       
+        }
+        
+        else{
+            
+            int valor=0;
+            int  idpost=Integer.parseInt(request.getParameter("id_public"));
+            Integer user=(Integer)sesion.getAttribute("persona");
+            LikeDTO pdto = new LikeDTO();
+            LikeDAOS countlikes=new LikeDAOS(); 
+            pdto.setId_user(user);
+            pdto.setId_post(idpost);
+            int total=countlikes.UserIslike(pdto);
+            if(total == 1){
+            %><a href="http://localhost:8080/eaci/control/addLikes.jsp?id_public=<%= request.getParameter("id_public") %>" ><i class="fas fa-heart"></i></a><%    
+             }
+            else{
+            %><a href="http://localhost:8080/eaci/control/addLikes.jsp?id_public=<%= request.getParameter("id_public") %>" ><i class="far fa-heart"></i></a><%
+            }
+            
+
+            }
+
+          %>    
+            
+            
+            
         <a href="http://localhost:8080/eaci/views/options/public.jsp?id_public=<%= request.getParameter("id_public") %>"><i class='fas fa-comment-dots coments'></i></a>
         <a><i class='fas fa-share share'></i></a>
 
-        </div>    
-        <a href="http://localhost:8080/eaci/control/addreport.jsp?id_pub=<%= request.getParameter("id_public") %>"><i class='fas fa-exclamation-circle report'></i></a>
+        </div>  
+        
+                  <%            
+        if(sesion.getAttribute("name")==null || sesion.getAttribute("rol")==null || sesion.getAttribute("persona")==null){
+          %><a href="#"><i class='fas fa-exclamation-circle report'></i></a><%    
+        
+        }
+        
+        else{
+            
+            int valor=0;
+            int  idpost=Integer.parseInt(request.getParameter("id_public"));
+            Integer user=(Integer)sesion.getAttribute("persona");
+            reportDTO pdto = new reportDTO();
+            reportDAOS countreport=new reportDAOS(); 
+            pdto.setId_users(user);
+            pdto.setId_posts(idpost);
+            int reporttotal=countreport.UserIsReport(pdto);
+            if(reporttotal == 1){
+            %><a href="http://localhost:8080/eaci/control/addreport.jsp?id_pub=<%= request.getParameter("id_public") %>"><i class='fas fa-exclamation-circle report'></i>reportada</a><%    
+             }
+            else{
+            %><a href="http://localhost:8080/eaci/control/addreport.jsp?id_pub=<%= request.getParameter("id_public") %>"><i class='fas fa-exclamation-circle report'></i>reportar</a><%    
+            }
+            
+
+            }
+
+          %>    
     </div>
 </div>
 <%

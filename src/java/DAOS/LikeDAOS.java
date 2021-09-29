@@ -142,4 +142,27 @@ public class LikeDAOS implements Interfaz_Like {
         return numlike;
       
     }
+
+    @Override
+    public int UserIslike(LikeDTO like) {
+        
+        int islike =0 ;
+        try{
+            sql = "select count(*) as numlike from likes where id_user ="+like.getId_user()+" && id_post="+like.getId_post()+"";
+            System.out.println(sql);
+            conex = DB.conect();
+            stm = conex.createStatement();
+            rs = stm.executeQuery(sql);
+            while(rs.next()){      
+                islike = rs.getInt("numlike");        
+            }
+           
+        }
+        catch(Exception e){
+            System.out.println("El error en listar like"+ e.getMessage());
+        }
+        return islike;
+        
+        
+    }
 }

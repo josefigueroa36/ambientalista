@@ -15,4 +15,7 @@ import java.util.ArrayList;
 public interface Interfaz_report {
     public ArrayList <reportDTO> ListReport();
     public boolean Newreport(reportDTO reporte);
+    public boolean DeleteReport(reportDTO reporte);
+    public int UserIsReport(reportDTO reporte);
+    public boolean DeleteAllreport();
 }

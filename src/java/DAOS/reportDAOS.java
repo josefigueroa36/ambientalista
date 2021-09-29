@@ -72,6 +72,72 @@ public class reportDAOS implements Interfaz_report {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public boolean DeleteReport(reportDTO reporte) {
+        int valor = 0 ;
+        try{
+            sql = "delete from report where id_user ="+reporte.getId_users()+" && id_post="+reporte.getId_posts()+"";
+            conex = DB.conect();
+            stm = conex.createStatement();
+            valor = stm.executeUpdate(sql);
+            if(valor !=0 ){
+                return check =true ;
+            }
+            else{
+                return check =false;
+            }
+           
+        }
+        catch(Exception e){
+            System.out.println("error en eliminar reporte" + e.getMessage());
+        }
+        return check;
+    }
+
+    @Override
+    public int UserIsReport(reportDTO reporte) {
+        
+        int isReport =0 ;
+        try{
+            sql = "select count(*) as numreport from report where id_user ="+reporte.getId_users()+" && id_post="+reporte.getId_posts()+"";
+            conex = DB.conect();
+            stm = conex.createStatement();
+            rs = stm.executeQuery(sql);
+            while(rs.next()){      
+                isReport = rs.getInt("numreport");        
+            }
+           
+        }
+        catch(Exception e){
+            System.out.println("El error en listar report"+ e.getMessage());
+        }
+        return isReport;
+        
+    }
+
+    @Override
+    public boolean DeleteAllreport() {
+         int valor = 0 ;
+        try{
+            sql = "delete from report";
+            conex = DB.conect();
+            stm = conex.createStatement();
+            valor = stm.executeUpdate(sql);
+            if(valor !=0 ){
+                return check =true ;
+            }
+            else{
+                return check =false;
+            }
+           
+        }
+        catch(Exception e){
+            System.out.println("error en borrar todo" + e.getMessage());
+        }
+        return check;
+    }
+    
+
 
     
 }

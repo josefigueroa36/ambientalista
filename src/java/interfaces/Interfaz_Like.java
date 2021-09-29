@@ -12,4 +12,5 @@ public interface Interfaz_Like {
     public ArrayList <LikeDTO> ListLike();
     public boolean NewLike(LikeDTO like);
     public boolean DeleteLike(LikeDTO like);
+    public int UserIslike(LikeDTO like);
 }

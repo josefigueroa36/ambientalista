@@ -64,7 +64,7 @@
             
         }
         catch(Exception e){
-            System.out.println(e);
+            System.out.println("error"+e);
             response.sendRedirect("/eaci/views/dashboard/addpublic.jsp?error=true");
         }
     }

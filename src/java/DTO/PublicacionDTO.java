@@ -9,7 +9,7 @@ public class PublicacionDTO {
     String fecha;
     boolean archivado;
     int usuario;
-    
+    int numlike;
     
     public PublicacionDTO(){
         
@@ -71,12 +71,22 @@ public class PublicacionDTO {
         this.usuario = usuario;
     }
 
-    public PublicacionDTO(int id_publicacion, String title, String body, String image, String fecha, int usuario) {
+    public int getNumlike() {
+        return numlike;
+    }
+
+    public void setNumlike(int numlike) {
+        this.numlike = numlike;
+    }
+
+
+    public PublicacionDTO(int id_publicacion, String title, String body, String image, String fecha, int usuario, int numlike) {
         this.id_publicacion = id_publicacion;
         this.title = title;
         this.body = body;
         this.image = image;
         this.fecha = fecha;
         this.usuario = usuario;
+        this.numlike = numlike;
     }
 }

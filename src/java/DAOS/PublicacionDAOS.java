@@ -34,6 +34,7 @@ public class PublicacionDAOS implements Interfaz_Publicacion {
                 publicacion.setImage(rs.getString("image"));
                 publicacion.setFecha(rs.getString("fecha"));
                 publicacion.setUsuario(rs.getInt("usuario"));
+                publicacion.setNumlike(rs.getInt("numlike"));
                 lista.add(publicacion);
             }
             return lista;

@@ -62,7 +62,7 @@
     </div>
     <div class='reaction-content'>
         <div class='left-reaction'>
-            
+            <span><%= request.getParameter("numLike")    %></span>
           <%
               
         HttpSession sesion=request.getSession();

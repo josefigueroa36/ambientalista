@@ -30,7 +30,7 @@
             <jsp:param name="body" value="<%= p.getBody() %>"/>
             <jsp:param name="image" value="<%= p.getImage() %>"/>
             <jsp:param name="fecha" value="<%= p.getFecha() %>"/>
-            
+            <jsp:param name="numLike" value="<%= p.getNumlike() %>"/>
          </jsp:include>
         <% } %>
       

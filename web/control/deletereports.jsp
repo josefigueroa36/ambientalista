@@ -23,6 +23,6 @@
         
     }
     else{
-        response.sendRedirect("../../dashboard/reportesregister.jsp");
+        response.sendRedirect("../views/dashboard/reportesregister.jsp");
     }
 %>

@@ -9,6 +9,22 @@
 <%@page import="DAOS.PersonaDAOS"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
+<style>
+    .usernew{
+        text-decoration: none;
+        padding: 10px;
+        background-color: #F9A602;
+        border-radius: 16px;
+        color:black;
+        
+    }
+     .usernew:hover{
+       font-size: 18px;
+      }
+    button{
+        border: none
+    }
+</style>
 
 <%
     HttpSession sesion = request.getSession();
@@ -53,7 +69,7 @@
 
 %>
 <div>
-    <button type="submit"><a href="../../views/dashboard/includes/addUserview.jsp">Añadir Usuario</a></button>
+    <button type="submit" ><a href="../../views/dashboard/includes/addUserview.jsp" class="usernew">Añadir Usuario</a></button>
 </div>
 <div class='usuarios-content' id="cardList">
 
